@@ -75,8 +75,8 @@ return (
 
         </div>
         <div className = 'store-item__color-and-price'>
-            <div ref={changeColor} className = 'store-item__color-selection '>
-                <div  className = 'selection_main' onClick ={colorSelectionHandler}>
+            <div ref={changeColor} className = 'store-item__color-selection ' onClick ={colorSelectionHandler}>
+                <div  className = 'selection_main' >
                     <span>{props.activeColor}</span>
                     <span><img src = {arrow} alt = 'arrow'/></span>
                 </div>
