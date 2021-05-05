@@ -5,7 +5,7 @@ import basket_done from "../img/done.png";
 
 export default function StoreItem (props){
 
-const [checkProduct, setCheckProduct] = useState({value: {...props.productValue.value}, 
+const [checkProduct, setCheckProduct] = useState({value: [...props.productValue.value], 
                                                  selected: props.productValue.value[0],
                                                  price: props.productPrice.price})
 
@@ -82,15 +82,12 @@ return (
                 </div>
                 <div ref = {colorSelect} className = 'selection_sub'>
                     <div className = 'selection_colors'>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[0])}>{props.productColors.color[0]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[1])}>{props.productColors.color[1]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[2])}>{props.productColors.color[2]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[3])}>{props.productColors.color[3]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[4])}>{props.productColors.color[4]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[5])}>{props.productColors.color[5]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[6])}>{props.productColors.color[6]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[7])}>{props.productColors.color[7]}</p>
-                            <p onClick = {()=>colorSwitch(props.id, props.productColors.color[8])}>{props.productColors.color[8]}</p>
+                            {props.productColors.color.length ? 
+                            props.productColors.color.map(color => {
+                                return (
+                                <p key = {color} onClick = {()=>colorSwitch(props.id, color)}>{color}</p>
+                                )}) :
+                                <p>Извините на данный момент нет доступных цветов</p>}
                     </div>
                 </div>
             </div>
@@ -100,30 +97,19 @@ return (
         </div>
 
         <div className = 'store-item__volume'>
-        <label className = 'store-item__input-container'>{checkProduct.value[0]} мл
-                <input name = {props.nameRadio} 
-                type = 'radio' 
-                value = {checkProduct.value[0]}
-                checked = {checkProduct.selected === checkProduct.value[0]}
-                onChange = {radioCheckHandler}/>
-                <span className = 'store-item__checkmark'></span>  
-            </label>
-            <label className = 'store-item__input-container'>{checkProduct.value[1]} мл
-                <input name = {props.nameRadio} 
-                type = 'radio'
-                value = {checkProduct.value[1]}
-                checked = {checkProduct.selected === checkProduct.value[1]}
-                onChange = {radioCheckHandler}/>
-                <span className = 'store-item__checkmark'></span>
-            </label>
-            <label className = 'store-item__input-container'>{checkProduct.value[2]} мл
-                <input name = {props.nameRadio} 
-                type = 'radio'
-                value = {checkProduct.value[2]}
-                checked = {checkProduct.selected === checkProduct.value[2]}
-                onChange = {radioCheckHandler}/>
-                <span className = 'store-item__checkmark'></span>
-            </label>
+            {checkProduct.value.length ? 
+                checkProduct.value.map(value => {
+                    return (
+                        <label key = {value} className = 'store-item__input-container'>{value} мл
+                            <input name = {props.nameRadio} 
+                            type = 'radio' 
+                            value = {value}
+                            checked = {checkProduct.selected === value}
+                            onChange = {radioCheckHandler}/>
+                            <span className = 'store-item__checkmark'></span>  
+                        </label>
+                    )}) :
+                <p>Пока нет доступных объемов</p>}
         </div>
         
         <div className = 'store-item__count-and-buyButton'>

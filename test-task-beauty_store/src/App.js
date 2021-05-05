@@ -25,7 +25,6 @@ const products = [
                             'Фиолетовый',
                             'Коричневый',
                             'Голубой',
-                            'Лягушка в обмороке',
                             'Розовый' ]
       },
     activeColor: 'Цвет',
@@ -46,15 +45,11 @@ const products = [
     productText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     productPrice: {price: 150},
     productColors: {
-                    color: ['Желтый',
-                            'Красный',
-                            'Синий',
-                            'Зеленый',
-                            'Фиолетовый',
-                            'Коричневый',
-                            'Голубой',
+                    color: ['Антрацит',
+                            'Пудровый',
+                            'Бэби блю',
                             'Лягушка в обмороке',
-                            'Розовый' ]
+                            'Кремовый' ]
       },
     activeColor: 'Цвет',
     productValue: {
@@ -74,19 +69,15 @@ const products = [
     productText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     productPrice: {price: 175},
     productColors: {
-                    color: ['Желтый',
-                            'Красный',
-                            'Синий',
-                            'Зеленый',
-                            'Фиолетовый',
-                            'Коричневый',
-                            'Голубой',
-                            'Лягушка в обмороке',
-                            'Розовый' ]
+                    color: ['Яйца странствующего дрозда',
+                            'Бисмарк-фуриозо',
+                            'Пурпурная пицца',
+                            'Последний вздох жако',
+                            'Вердепомовый', ]
       },
     activeColor: 'Цвет',
     productValue: {
-                    value: [125, 210, 295]
+                    value: [125, 210, 295, 380, 700]
     },
     isAcitve: false,
     isNew: true,
